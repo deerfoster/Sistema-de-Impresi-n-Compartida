@@ -35,4 +35,18 @@ public class Cola {
     public boolean estaVacia() {
         return frente == null;
     }
+
+    public com.mycompany.queuefirstinlastout.TrabajoCola desencolar() {
+        if (estaVacia()) {
+            return null;
+        }
+        com.mycompany.queuefirstinlastout.TrabajoCola trabajoEliminado = frente;
+        frente = frente.punteroSiguiente;
+        if (frente == null) {
+            ultimo = null;
+        }
+        return trabajoEliminado;
+    }
 }
+
+
