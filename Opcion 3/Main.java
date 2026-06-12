@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Cola cola = new Cola();
+        ListaHistorial historial = new ListaHistorial();
         Scanner scanner = new Scanner(System.in);
         int opcion;
 
@@ -13,26 +14,31 @@ public class Main {
             System.out.println("1. Agregar trabajo a la cola");
             System.out.println("2. Imprimir siguiente trabajo (puente)");
             System.out.println("3. Mostrar trabajos en espera");
-            System.out.println("4. Mostrar historial de impresiones (PENDIENTE)");
+            System.out.println("4. Mostrar historial de impresiones");
             System.out.println("5. Salir");
             System.out.print("Seleccione una opción: ");
 
-            opcion = scanner.nextInt();
-            scanner.nextLine(); // Limpiar el buffer
+            opcion = leerEntero(scanner);
+            scanner.nextLine();
+
+            limpiarPantalla();
 
             switch(opcion) {
                 case 1:
                     System.out.print("Nombre del archivo: ");
                     String archivo = scanner.nextLine();
                     System.out.print("Número de páginas: ");
-                    int paginas = scanner.nextInt();
-                    cola.Encolar(archivo, paginas);
-                    System.out.println("✓ Trabajo agregado a la cola (ID: " + paginas + ")");
+                    int paginas = leerEntero(scanner);
+                    if (paginas > 0) {
+                        cola.Encolar(archivo, paginas);
+                        System.out.println("✓ Trabajo agregado a la cola");
+                    } else {
+                        System.out.println("✗ El número de páginas debe ser mayor a 0");
+                    }
                     break;
 
                 case 2:
-                    // TU OPCIÓN 2 - PUENTE
-                    Puente.ejecutar(cola);
+                    Puente.ejecutar(cola, historial);
                     break;
 
                 case 3:
@@ -40,8 +46,7 @@ public class Main {
                     break;
 
                 case 4:
-                    System.out.println("⏳ Opción 4 en desarrollo - Historial de impresiones");
-                    System.out.println("(Pendiente: lista enlazada de trabajos finalizados)");
+                    historial.mostrarHistorial();
                     break;
 
                 case 5:
@@ -51,8 +56,33 @@ public class Main {
                 default:
                     System.out.println("Opción no válida. Intente de nuevo.");
             }
+
+            if (opcion != 5) {
+                System.out.println("\nPresiona Enter para continuar...");
+                scanner.nextLine();
+                limpiarPantalla();
+            }
+
         } while(opcion != 5);
 
         scanner.close();
+    }
+
+    public static void limpiarPantalla() {
+        for (int i = 0; i < 50; i++) {
+            System.out.println();
+        }
+    }
+
+    public static int leerEntero(Scanner scanner) {
+        while (true) {
+            try {
+                int numero = scanner.nextInt();
+                return numero;
+            } catch (java.util.InputMismatchException e) {
+                System.out.print("✗ Debes ingresar un número válido. Intenta de nuevo: ");
+                scanner.next();
+            }
+        }
     }
 }

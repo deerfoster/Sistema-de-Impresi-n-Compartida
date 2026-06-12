@@ -2,7 +2,7 @@ package com.mycompany.queuefirstinlastout;
 
 public class Puente {
 
-    public static void ejecutar(Cola cola) {
+    public static void ejecutar(Cola cola, ListaHistorial historial) {
         if (cola.estaVacia()) {
             System.out.println("No hay trabajos en espera para imprimir.");
         } else {
@@ -10,9 +10,7 @@ public class Puente {
             System.out.println("Imprimiendo " + trabajoActual.archivo +
                     " (" + trabajoActual.hojas + " páginas)...");
             System.out.println("✓ Trabajo #" + trabajoActual.codigo + " completado");
-
-            //  Cuando tu compañero haga la Opción 4, aquí se agrega:
-            // historial.agregar(trabajoActual);
+            historial.agregar(trabajoActual.codigo, trabajoActual.archivo, trabajoActual.hojas);
         }
     }
 }
