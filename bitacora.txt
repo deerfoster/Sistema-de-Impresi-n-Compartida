@@ -1,0 +1,16 @@
+10/06/2026 Modulo Cola (Nodo) - Xariadna Perez
+
+- Empece haciendo mi clase TrabajoCola que va a actuar como la clase nodo; este contiene las propiedades del mismo, en este caso codigo(ID de la operacion), archivo(nombre) y hojas(cantidad).
+
+- asigne un puntero siguiente a las propiedades de tipo null.
+
+- Dentro de la clase TrabajoCola cree el constructor para asignar las variables (int nuevoCodigo, String nuevoArchivo, int numeroHojas) que coloque el usuario a las variables del nodo.
+-------------------------------------------------------------------------
+11/06/2026 Modulo Cola (Encolacion) - Xariadna Perez
+
+- Cree mi clase cola para que contenga las propiedades frente, ultimo y contador empezando desde cero (el comportamiento de la cola) con respecto de mi objeto TrabajoCola que es el nodo. 
+
+- Cree el metodo Encolar dentro de la clase cola que recibira del usuario nombre del archivo y cantidad de hojas; la ID de la operacion se ira asignando automaticamente al usarse el metodo con contador++;
+
+- coloque las validaciones en caso de que no exista un nodo (el frente de la cola sea null) y en caso de que si exista un nodo en cola (se cambia el punteroSiguiente del nodo ultimo al del nuevo nodo y se asigna la propiedad de la cola ultimo al ultimo nodo que se haya creado).
+-------------------------------------------------------------------------
