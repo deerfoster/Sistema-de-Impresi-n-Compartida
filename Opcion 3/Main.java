@@ -12,7 +12,7 @@ public class Main {
         do {
             System.out.println("\n=== SISTEMA DE IMPRESIÓN COMPARTIDA ===");
             System.out.println("1. Agregar trabajo a la cola");
-            System.out.println("2. Imprimir siguiente trabajo (puente)");
+            System.out.println("2. Imprimir siguiente trabajo");
             System.out.println("3. Mostrar trabajos en espera");
             System.out.println("4. Mostrar historial de impresiones");
             System.out.println("5. Salir");
