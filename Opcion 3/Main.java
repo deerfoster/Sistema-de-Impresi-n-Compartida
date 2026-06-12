@@ -19,8 +19,6 @@ public class Main {
             System.out.print("Seleccione una opción: ");
 
             opcion = leerEntero(scanner);
-            scanner.nextLine();
-
             limpiarPantalla();
 
             switch(opcion) {
@@ -58,7 +56,7 @@ public class Main {
             }
 
             if (opcion != 5) {
-                System.out.println("\nPresiona Enter para continuar...");
+                System.out.print("\nPresiona Enter para continuar...");
                 scanner.nextLine();
                 limpiarPantalla();
             }
@@ -78,6 +76,7 @@ public class Main {
         while (true) {
             try {
                 int numero = scanner.nextInt();
+                scanner.nextLine();
                 return numero;
             } catch (java.util.InputMismatchException e) {
                 System.out.print("✗ Debes ingresar un número válido. Intenta de nuevo: ");
