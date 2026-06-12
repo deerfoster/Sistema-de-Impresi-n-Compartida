@@ -14,3 +14,13 @@
 
 - coloque las validaciones en caso de que no exista un nodo (el frente de la cola sea null) y en caso de que si exista un nodo en cola (se cambia el punteroSiguiente del nodo ultimo al del nuevo nodo y se asigna la propiedad de la cola ultimo al ultimo nodo que se haya creado).
 -------------------------------------------------------------------------
+11/06/2026 Modulo Cola (obtenerFrente) - Ricardo Noriega
+
+- Agregue el getter "obtenerFrente" para poder usar la propiedad frente en el modulo Bucle
+-------------------------------------------------------------------------
+11/06/2026 Modulo Bucle - Ricardo Noriega
+
+- Haciendo uso de los modulos creados anteriormente (Cola y TrabajoCola) se hizo en su totalidad el modulo bucle.
+
+- Creación del metodo mostrarCola que se encarga de verificar los trabajos en espera de la cola y mostrar en pantalla los que haya en la Cola.
+-------------------------------------------------------------------------
