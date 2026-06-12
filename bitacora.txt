@@ -24,3 +24,12 @@
 
 - Creación del metodo mostrarCola que se encarga de verificar los trabajos en espera de la cola y mostrar en pantalla los que haya en la Cola.
 -------------------------------------------------------------------------
+11/06/2026 Modulo Puente - Eduardo Hernández
+
+- Creación del modulo puente para movilizar objetos de la cola hacia la lista de finalizados
+-------------------------------------------------------------------------
+11/06/2026 Modulo Main - Eduardo Hernández
+
+- Creación del modulo Main que controla el programa, llamando al resto de modulos.
+
+- No errores encontrados con su implementación.
